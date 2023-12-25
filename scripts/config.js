@@ -6,7 +6,7 @@ export function initConfig() {
 
     if (!REGISTER_TEST_PACKS) return;
 
-    Hooks.on(`wfc-procedural-generator-2-init`, (wfc) => {
+    Hooks.on(`wfc-procedural-generator-init`, (wfc) => {
         console.log("[config.js] Registering test packs");
 
         wfc.registerPack("degruchy-test", {

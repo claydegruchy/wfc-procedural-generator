@@ -27,7 +27,7 @@ Once you have your tiles, you need to add them to `config.js`.
 
 ## Helpers
 ### Open settings macro
-`new (game.settings.menus.get("wfc-procedural-generator-2.app").type)().render(true)`
+`new (game.settings.menus.get("wfc-procedural-generator.app").type)().render(true)`
 
 ### Import a character template
 `tokenAttacher.importFromJSON(<some json>)`
