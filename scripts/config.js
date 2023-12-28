@@ -36,21 +36,21 @@ export function initConfig() {
                         },
 
                         //Straight
-                        {
-                            "id": "template-Straight-v-1",
-                            "asset": "template-Straight-v-1",
-                            "rotation": 0,
-                            "weight": 10,
-                            "sockets": {
-                                "left": ["empty"],
-                                "right": ["empty"],
-                                "up": ["v"],
-                                "down": ["v"],
-                                "top": [],
-                                "bottom": []
-                            }
-                        },
-                        //Bifurcation
+                        // {
+                        //     "id": "template-Straight-v-1",
+                        //     "asset": "template-Straight-v-1",
+                        //     "rotation": 0,
+                        //     "weight": 10,
+                        //     "sockets": {
+                        //         "left": ["empty"],
+                        //         "right": ["empty"],
+                        //         "up": ["v"],
+                        //         "down": ["v"],
+                        //         "top": [],
+                        //         "bottom": []
+                        //     }
+                        // },
+                        // // Bifurcation
                         // {
                         //     "id": "template-Bifurcation-v-1",
                         //     "asset": "template-Bifurcation-v-1",
@@ -66,7 +66,7 @@ export function initConfig() {
                         //     }
                         // },
 
-                        //End
+                        // // End
                         // {
                         //     "id": "template-End-v-1",
                         //     "asset": "template-End-v-1",
@@ -76,21 +76,6 @@ export function initConfig() {
                         //         "left": ["empty"],
                         //         "right": ["empty"],
                         //         "up": ["empty"],
-                        //         "down": ["v"],
-                        //         "top": [],
-                        //         "bottom": []
-                        //     }
-                        // },
-                        // {
-                        //     "id": "template-Offset-vh-1",
-                        //     "asset": "template-Offset-vh-1",
-                        //     "centreOffset": { "x": -1, "y": -1, "z": 0 },
-                        //     "rotation": 0,
-                        //     "weight": 200,
-                        //     "sockets": {
-                        //         "left": ["h"],
-                        //         "right": ["h"],
-                        //         "up": ["v"],
                         //         "down": ["v"],
                         //         "top": [],
                         //         "bottom": []
