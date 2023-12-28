@@ -2,7 +2,7 @@ import { initConfig } from "./config.js";
 import { registerSettings } from "./settings.js";
 import { WFCProceduralGenerator } from "./WFCProceduralGenerator.js";
 
-export const MODULE_ID = "wfc-procedural-generator-2";
+export const MODULE_ID = "wfc-procedural-generator";
 
 export const WFCLib = new WFCProceduralGenerator();
 

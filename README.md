@@ -2,7 +2,7 @@
 A wave form collapse based map generator
 
 # How
-Theripper is a genius, I'm not modifying that part of the logic. If you want to learn more about WFC check this out https://github.com/mxgmn/WaveFunctionCollapse 
+If you want to learn more about WFC check this out https://github.com/mxgmn/WaveFunctionCollapse 
 
 # Making packs
 Packs need to be created in two locations
@@ -23,11 +23,13 @@ First, create a bunch of tiles in foundry. To do this:
 Once you have your tiles, you need to add them to `config.js`.
 - Copy the `wfc.registerPack("degruchy-test", {`[...]`}`
 - for each tile, insert a relevant section with the sockets defined and matching up
+- if you wish to have an offset, add a `centreOffset` field referening the offset between the centre of the prefab and the actual actor in the prefab
+    - eg: `"centreOffset": { "x": -100, "y": -100, "z": 0 },`, if my 3x3 
 
 
 ## Helpers
 ### Open settings macro
-`new (game.settings.menus.get("wfc-procedural-generator-2.app").type)().render(true)`
+`new (game.settings.menus.get("wfc-procedural-generator.app").type)().render(true)`
 
 ### Import a character template
 `tokenAttacher.importFromJSON(<some json>)`

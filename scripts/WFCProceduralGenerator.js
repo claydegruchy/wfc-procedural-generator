@@ -70,9 +70,11 @@ export class WFCProceduralGenerator {
         const paddingOffset = padding ? blockSize * size : 0;
         const isEven = blockSize % 2 === 0;
         const evenOffset = isEven ? size / 2 : 0;
+
         for (const block of bestResult) {
             if (!block.value?.asset) continue;
-            const { x, y, z } = block;
+            let { x, y, z } = block;
+
             const tokenData = (await game.actors.getName(block.value.asset).getTokenData()).toObject();
             const position = {
                 x: (x * blockSize * size) + (blockSize * size / 2) - size / 2 + sceneX - paddingOffset + evenOffset,
@@ -80,8 +82,13 @@ export class WFCProceduralGenerator {
             }
             tokenData.x = position.x;
             tokenData.y = position.y;
+            // if (block?.value?.centreOffset) {
+            //     tokenData.x += block.value.centreOffset.x;
+            //     tokenData.y += block.value.centreOffset.y;
+            // }
+
             //tokenData.rotation = block.value.rotation;
-            toRotate.push({ td: tokenData, rotation: block.value.rotation });
+            toRotate.push({ td: tokenData, rotation: block.value.rotation, centreOffset: block?.value?.centreOffset });
         }
         const toCreate = toRotate.map(({ td }) => td);
         const tokens = [];
@@ -98,11 +105,29 @@ export class WFCProceduralGenerator {
             270: { x: -size, y: 0 }
         }
 
+
         setTimeout(async () => {
             ui.notifications.clear?.();
             const updates = tokens.map((token, i) => {
                 const offset = isEven ? rotationToOffset[toRotate[i].rotation] : { x: 0, y: 0 };
-                return { _id: token.id, rotation: toRotate[i].rotation, x: token.x + offset.x, y: token.y + offset.y };
+
+                if (toRotate[i].centreOffset) {
+                    let { x, y } = toRotate[i].centreOffset;
+                    let rotationOffsets = {
+                        0: { x: x, y: y },
+                        90: { x: -x, y: y },
+                        180: { x: -x, y: -y },
+                        270: { x: x, y: -y },
+                    }
+                    offset.x += rotationOffsets[toRotate[i].rotation].x;
+                    offset.y += rotationOffsets[toRotate[i].rotation].y;
+                }
+
+                return {
+                    _id: token.id, rotation: toRotate[i].rotation,
+                    x: token.x + offset.x,
+                    y: token.y + offset.y
+                };
             });
             for (const update of updates) {
                 await canvas.scene.updateEmbeddedDocuments("Token", [update]);

@@ -6,7 +6,7 @@ export function initConfig() {
 
     if (!REGISTER_TEST_PACKS) return;
 
-    Hooks.on(`wfc-procedural-generator-2-init`, (wfc) => {
+    Hooks.on(`wfc-procedural-generator-init`, (wfc) => {
         console.log("[config.js] Registering test packs");
 
         wfc.registerPack("degruchy-test", {
@@ -19,20 +19,21 @@ export function initConfig() {
                     padding: "empty",
                     dataset: [
                         //Curve
-                        // {
-                        //     "id": "template-Curve-vh-1",
-                        //     "asset": "template-Curve-vh-1",
-                        //     "rotation": 0,
-                        //     "weight": 1,
-                        //     "sockets": {
-                        //         "left": ["h"],
-                        //         "right": ["empty"],
-                        //         "up": ["empty"],
-                        //         "down": ["v"],
-                        //         "top": [],
-                        //         "bottom": []
-                        //     }
-                        // },
+                        {
+                            "id": "template-Curve-vh-1",
+                            "asset": "template-Curve-vh-1",
+                            "centreOffset": { "x": -100, "y": -100, "z": 0 },
+                            "rotation": 0,
+                            "weight": 1,
+                            "sockets": {
+                                "left": ["h"],
+                                "right": ["empty"],
+                                "up": ["empty"],
+                                "down": ["v"],
+                                "top": [],
+                                "bottom": []
+                            }
+                        },
 
                         //Straight
                         // {
@@ -49,7 +50,7 @@ export function initConfig() {
                         //         "bottom": []
                         //     }
                         // },
-                        //Bifurcation
+                        // // Bifurcation
                         // {
                         //     "id": "template-Bifurcation-v-1",
                         //     "asset": "template-Bifurcation-v-1",
@@ -65,7 +66,7 @@ export function initConfig() {
                         //     }
                         // },
 
-                        //End
+                        // // End
                         // {
                         //     "id": "template-End-v-1",
                         //     "asset": "template-End-v-1",
@@ -80,20 +81,6 @@ export function initConfig() {
                         //         "bottom": []
                         //     }
                         // },
-                        {
-                            "id": "template-Offset-vh-1",
-                            "asset": "template-Offset-vh-1",
-                            "rotation": 0,
-                            "weight": 2,
-                            "sockets": {
-                                "left": ["h"],
-                                "right": ["h"],
-                                "up": ["v"],
-                                "down": ["v"],
-                                "top": [],
-                                "bottom": []
-                            }
-                        },
                     ],
                     iterations: 10,
                     blockSize: 3,

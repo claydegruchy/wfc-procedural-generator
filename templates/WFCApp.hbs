@@ -23,13 +23,13 @@
                 <li>
                     <h3>{{generator.name}}</h3>
                     <p class="notes">{{generator.description}}</p>
-                    <p><strong>{{localize "wfc-procedural-generator-2.prefab-count"}}: </strong>{{generator.count}}</p>
+                    <p><strong>{{localize "wfc-procedural-generator.prefab-count"}}: </strong>{{generator.count}}</p>
                     <button {{#unless generator.valid}}disabled data-tooltip="{{localize "
-                        wfc-procedural-generator-2.actors-missing"}}<hr>{{generator.missing}}"{{/unless}}
+                        wfc-procedural-generator.actors-missing"}}<hr>{{generator.missing}}"{{/unless}}
                         data-index="{{generator.index}}" class="generate">{{#unless generator.valid}}<i
                             style="color: var(--color-level-warning);" class="fa-solid fa-triangle-exclamation"></i>
                         {{/unless}}<i class="fa-solid fa-dice"></i> {{localize
-                        "wfc-procedural-generator-2.generate"}}</button>
+                        "wfc-procedural-generator.generate"}}</button>
                 </li>
                 {{/each}}
             </ol>

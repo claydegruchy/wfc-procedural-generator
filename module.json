@@ -1,11 +1,11 @@
 {
     "title": "Library: Wave Function Collapse 2",
     "description": "desc",
-    "id": "wfc-procedural-generator-2",
+    "id": "wfc-procedural-generator",
     "version": "1.1",
     "authors": [
       {
-        "name": "theripper93+degruchy",
+        "name": "theripper93",
         "email": "tsplab@gmail.com",
         "url": "https://www.patreon.com/theripper93"
       }
